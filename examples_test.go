@@ -8,8 +8,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/example/starwars"
+	"github.com/dunstack/graphql-go"
+	"github.com/dunstack/graphql-go/example/starwars"
 )
 
 type Resolver struct {

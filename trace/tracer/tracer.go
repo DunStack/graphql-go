@@ -4,8 +4,8 @@ package tracer
 import (
 	"context"
 
-	"github.com/graph-gophers/graphql-go/errors"
-	"github.com/graph-gophers/graphql-go/introspection"
+	"github.com/dunstack/graphql-go/errors"
+	"github.com/dunstack/graphql-go/introspection"
 )
 
 type QueryFinishFunc = func([]*errors.QueryError)

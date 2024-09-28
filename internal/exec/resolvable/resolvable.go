@@ -6,10 +6,10 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/graph-gophers/graphql-go/ast"
-	"github.com/graph-gophers/graphql-go/decode"
-	"github.com/graph-gophers/graphql-go/directives"
-	"github.com/graph-gophers/graphql-go/internal/exec/packer"
+	"github.com/dunstack/graphql-go/ast"
+	"github.com/dunstack/graphql-go/decode"
+	"github.com/dunstack/graphql-go/directives"
+	"github.com/dunstack/graphql-go/internal/exec/packer"
 )
 
 const (
@@ -565,7 +565,7 @@ func (b *execBuilder) makeFieldExec(typeName string, f *ast.FieldDefinition, m r
 			in = in[1:] // first parameter is receiver
 		}
 
-		hasContext = len(in) > 0 && in[0] == contextType
+		hasContext = len(in) > 0 && in[0].Implements(contextType)
 		if hasContext {
 			in = in[1:]
 		}

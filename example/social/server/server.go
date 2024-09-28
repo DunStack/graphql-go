@@ -4,9 +4,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/example/social"
-	"github.com/graph-gophers/graphql-go/relay"
+	"github.com/dunstack/graphql-go"
+	"github.com/dunstack/graphql-go/example/social"
+	"github.com/dunstack/graphql-go/relay"
 )
 
 func main() {

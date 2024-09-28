@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/graph-gophers/graphql-go/example/directives/authorization/user"
+	"github.com/dunstack/graphql-go/example/directives/authorization/user"
 )
 
 const Schema = `
