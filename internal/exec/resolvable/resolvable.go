@@ -565,7 +565,7 @@ func (b *execBuilder) makeFieldExec(typeName string, f *ast.FieldDefinition, m r
 			in = in[1:] // first parameter is receiver
 		}
 
-		hasContext = len(in) > 0 && in[0] == contextType
+		hasContext = len(in) > 0 && in[0].Implements(contextType)
 		if hasContext {
 			in = in[1:]
 		}
