@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/graph-gophers/graphql-go"
+	"github.com/dunstack/graphql-go"
 )
 
 type Map map[string]interface{}

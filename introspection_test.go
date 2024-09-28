@@ -6,9 +6,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/example/social"
-	"github.com/graph-gophers/graphql-go/example/starwars"
+	"github.com/dunstack/graphql-go"
+	"github.com/dunstack/graphql-go/example/social"
+	"github.com/dunstack/graphql-go/example/starwars"
 )
 
 func TestSchema_ToJSON(t *testing.T) {

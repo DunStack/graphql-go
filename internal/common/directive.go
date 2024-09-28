@@ -1,6 +1,6 @@
 package common
 
-import "github.com/graph-gophers/graphql-go/ast"
+import "github.com/dunstack/graphql-go/ast"
 
 func ParseDirectives(l *Lexer) ast.DirectiveList {
 	var directives ast.DirectiveList

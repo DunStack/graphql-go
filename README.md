@@ -1,4 +1,4 @@
-# graphql-go [![Sourcegraph](https://sourcegraph.com/github.com/graph-gophers/graphql-go/-/badge.svg)](https://sourcegraph.com/github.com/graph-gophers/graphql-go?badge) [![Build Status](https://graph-gophers.semaphoreci.com/badges/graphql-go/branches/master.svg?style=shields)](https://graph-gophers.semaphoreci.com/projects/graphql-go) [![Go Report](https://goreportcard.com/badge/github.com/graph-gophers/graphql-go)](https://goreportcard.com/report/github.com/graph-gophers/graphql-go) [![GoDoc](https://godoc.org/github.com/graph-gophers/graphql-go?status.svg)](https://godoc.org/github.com/graph-gophers/graphql-go)
+# graphql-go [![Sourcegraph](https://sourcegraph.com/github.com/dunstack/graphql-go/-/badge.svg)](https://sourcegraph.com/github.com/dunstack/graphql-go?badge) [![Build Status](https://graph-gophers.semaphoreci.com/badges/graphql-go/branches/master.svg?style=shields)](https://graph-gophers.semaphoreci.com/projects/graphql-go) [![Go Report](https://goreportcard.com/badge/github.com/dunstack/graphql-go)](https://goreportcard.com/report/github.com/dunstack/graphql-go) [![GoDoc](https://godoc.org/github.com/dunstack/graphql-go?status.svg)](https://godoc.org/github.com/dunstack/graphql-go)
 
 <p align="center"><img src="docs/img/logo.png" width="300"></p>
 
@@ -19,7 +19,7 @@ While still under development (`internal` APIs are almost certainly subject to c
   - [sample WS transport](https://github.com/graph-gophers/graphql-transport-ws)
 - directive visitors on fields (the API is subject to change in future versions)
 
-## (Some) Documentation [![GoDoc](https://godoc.org/github.com/graph-gophers/graphql-go?status.svg)](https://godoc.org/github.com/graph-gophers/graphql-go)
+## (Some) Documentation [![GoDoc](https://godoc.org/github.com/dunstack/graphql-go?status.svg)](https://godoc.org/github.com/dunstack/graphql-go)
 
 ### Getting started
 
@@ -31,8 +31,8 @@ import (
 	"log"
 	"net/http"
 
-	graphql "github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/relay"
+	graphql "github.com/dunstack/graphql-go"
+	"github.com/dunstack/graphql-go/relay"
 )
 
 type query struct{}
@@ -56,7 +56,7 @@ Then run the file with `go run main.go`. To test:
 ```sh
 curl -XPOST -d '{"query": "{ hello }"}' localhost:8080/query
 ```
-For more realistic usecases check our [examples section](https://github.com/graph-gophers/graphql-go/wiki/Examples).
+For more realistic usecases check our [examples section](https://github.com/dunstack/graphql-go/wiki/Examples).
 
 ### Resolvers
 
@@ -99,7 +99,7 @@ func (r *helloWorldResolver) Hello(ctx context.Context) (string, error) {
 ```
 
 ### Separate resolvers for different operations
-> **NOTE**: This feature is not in the stable release yet. In order to use it you need to run `go get github.com/graph-gophers/graphql-go@master` and in your `go.mod` file you will have something like:
+> **NOTE**: This feature is not in the stable release yet. In order to use it you need to run `go get github.com/dunstack/graphql-go@master` and in your `go.mod` file you will have something like:
 >  ```
 >  v1.5.1-0.20230216224648-5aa631d05992
 >  ```
@@ -219,10 +219,10 @@ By default the library uses `noop.Tracer`. If you want to change that you can us
 package main
 
 import (
-	"github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/example/starwars"
-	otelgraphql "github.com/graph-gophers/graphql-go/trace/otel"
-	"github.com/graph-gophers/graphql-go/trace/tracer"
+	"github.com/dunstack/graphql-go"
+	"github.com/dunstack/graphql-go/example/starwars"
+	otelgraphql "github.com/dunstack/graphql-go/trace/otel"
+	"github.com/dunstack/graphql-go/trace/tracer"
 )
 // ...
 _, err := graphql.ParseSchema(starwars.Schema, nil, graphql.Tracer(otelgraphql.DefaultTracer()))
@@ -240,10 +240,10 @@ _, err = graphql.ParseSchema(starwars.Schema, nil, graphql.Tracer(&otelgraphql.T
 package main
 
 import (
-	"github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/example/starwars"
-	"github.com/graph-gophers/graphql-go/trace/opentracing"
-	"github.com/graph-gophers/graphql-go/trace/tracer"
+	"github.com/dunstack/graphql-go"
+	"github.com/dunstack/graphql-go/example/starwars"
+	"github.com/dunstack/graphql-go/trace/opentracing"
+	"github.com/dunstack/graphql-go/trace/tracer"
 )
 // ...
 _, err := graphql.ParseSchema(starwars.Schema, nil, graphql.Tracer(opentracing.Tracer{}))
@@ -261,5 +261,5 @@ type Tracer interface {
 ```
 
 
-### [Examples](https://github.com/graph-gophers/graphql-go/wiki/Examples)
+### [Examples](https://github.com/dunstack/graphql-go/wiki/Examples)
 

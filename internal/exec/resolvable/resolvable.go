@@ -6,10 +6,10 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/graph-gophers/graphql-go/ast"
-	"github.com/graph-gophers/graphql-go/decode"
-	"github.com/graph-gophers/graphql-go/directives"
-	"github.com/graph-gophers/graphql-go/internal/exec/packer"
+	"github.com/dunstack/graphql-go/ast"
+	"github.com/dunstack/graphql-go/decode"
+	"github.com/dunstack/graphql-go/directives"
+	"github.com/dunstack/graphql-go/internal/exec/packer"
 )
 
 const (
